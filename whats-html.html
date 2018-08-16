@@ -31,12 +31,33 @@
                 margin-bottom: 0.25rem;
             }
 
+            .indent {
+                margin-left: 2em;
+            }
+
             .sentence {
                 margin-bottom: 1rem;
             }
 
             ol li {
                 margin-left: 1rem;
+            }
+
+            ul li::before {
+                content: '-';
+                margin-right: 0.5em;
+            }
+
+            pre:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            img {
+                display: block;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1rem;
             }
         </style>
 
@@ -58,8 +79,8 @@
 
             <h2>HTMLとは</h2>
             <div class='sentence'>
-                <p>HTMLとは、WEBページを構成するための言語です。</p>
-                <p>以下のようなタグに囲まれたテキストで表現をします。<p>
+                <p>HTMLとは、WEBページを構成するための言語です</p>
+                <p>以下のようなタグに囲まれたテキストで表現をします<p>
             </div>
 
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -72,17 +93,197 @@
     &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-            <hr/>
+            <hr />
 
             <h2>実際に書いてみよう</h2>
             <div class='sentence'>
-                <ol>
-                    <li><a>ここ</a>から<code>template.html</code>をダウンロードしましょう</li>
-                </ol>
+                <p><a href='https://raw.githubusercontent.com/derushio/web-bootcamp/master/template.html' target='_blank'>ここ</a>から<code>template.html</code>をダウンロードしましょう</li>
+                <p>ダウンロードしたファイルをVisual Studio Codeで開いてください</p>
+                <p>template.htmlファイル内の<code>&lt;section&gt;</code>タグの中にコードを記述していきます</p>
+                <p>まずは、<code>&lt;div class='box'&gt;</code>内のh1、pタグのテキストを変更してみましょう</p>
+                <p><code>&lt;h1&gt;</code>タグは見出し、<code>&lt;p&gt;</code>タグは段落の意味になります</p>
+                <p>次に以下のようなタグを追加します</p>
+            </div>
+<pre><code>&lt;button class='btn'&gt;ボタン&lt;/button&gt;</code></pre>
+
+            <div class='sentence'>
+                <p>これでボタンを実装することができます</p>
+                <p>次に画像を表示させます</p>
+            </div>
+<pre><code>&lt;img src='http://itnav.jp/wp/wp-content/themes/itonabu/img/logo_top.png' alt='画像の説明'&gt;</code></pre>
+
+            <div class='sentence'>
+                <p>画像の表示は<code>&lt;img src='画像のパス' alt='画像の説明'&gt;</code>このように記述します</p>
+                <p>次にリストを表示させます</p>
+                <p>リストを表示させるには、<code>&lt;ul&gt;</code>タグを使用します</p>
+                <p><code>&lt;ul&gt;</code>タグは順序のないリストを表示する際に使用します</p>
+                <p>リストの各項目は&lt;li&gt;タグを用いて記述します</p>
+                <p>また順序のあるリスト表示には&lt;ol&gt;タグを使用します</p>
+                <p>以下のコードをコピーして実行してみましょう</p>
+            </div>
+<pre><code>&lt;h3&gt;好きな動物&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;白くま&lt;/li&gt;
+    &lt;li&gt;犬&lt;/li&gt;
+    &lt;li&gt;猫&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;カレーの作り方&lt;/h3&gt;
+&lt;ol&gt;
+    &lt;li&gt;肉と野菜を炒める&lt;/li&gt;
+    &lt;li&gt;水を入れて中火で煮込む&lt;/li&gt;
+    &lt;li&gt;ルーを入れて弱火で煮込む&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+            <div class='sentence'>
+                <p>そして最後にもう１つ、リンクタグを使いたいと思います</p>
+                <p>リンクタグは以下のように書きます</p>
+            </div>
+<pre><code>&lt;a href='http://itnav.jp/' target='_blank'&gt;イトナブサイトへ&lt;/a&gt;</code></pre>
+            <div class='sentence'>
+                <p>&lt;a&gt;タグはアンカーの略で、hrefで指定したurlのサイトへ移動します</p>
+                <p>そして<code>target='_blank'</code>で新規のタブでウェブサイトを開くことができます</p>
+                <p>こちらがないと現在のページでリンク先が表示されます</p>
+                <p>さらに<a href='http://www.htmq.com/html/indexm.shtml' target='_blank'>こちら</a>からHTMLのタグ一覧を確認できます</p>
             </div>
 
+            <hr />
 
+            <h2>スタイルをつけてみよう</h2>
+            <div class='sentence'>
+                <p>HTMLのみでは書くことはできても見た目があまり良くありません</p>
+                <p>スタイルシートを書くことでよりかっこよいページをつくることができます</p>
+                <p>以下のようなセレクタ(対象)に対して区切られた範囲の中で、スタイルを定義します<p>
+            </div>
+
+<pre><code>.btn {
+    min-width: 7.5em;
+    background-color: skyblue;
+    cursor: pointer;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    outline: none;
+    appearance: none;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn:active {
+    opacity: 1.0;
+    transform: translate(0.1rem, 0.1rem);
+}</code></pre>
+
+            <div class='sentence'>
+                <p>HTMLの中でスタイルを定義するには<code>&lt;head&gt;</code>タグ内でスタイルを定義します</p>
+                <p>template.htmlでは既に<code>&lt;style&gt;</code>タグが定義されているのでその中に書くことになります</p>
+                <p><code>&lt;style&gt;</code>タグの中に上記のスタイルシートをコピペしてみましょう</p>
+                <p><code>&lt;button class='btn'&gt;ボタン&lt;/button&gt;</code>の<code>btn</code>とスタイルシートの<code>.btn</code>が対応しています</p>
+                <p>classを対応させる場合はドット(.)を名前の前に、idを対応させる場合はシャープ(#)を名前の前につけてスタイルシートを定義します</p>
+            </div>
+
+            <hr />
+
+            <h2>Bulmaを使ってみよう</h2>
+            <div class='sentence'>
+                <p>前章のように直接自分でスタイルシートを書くこともできますが、非常に手間が多く、ボタン一つの機能を定義するだけでも15行ほど書く必要がありました。全て自分でスタイルを定義するととんでもない労力になります</p>
+                <p>そこでCSSフレームワークというものが登場しました。今回は新興フレームワークの<a href='https://bulma.io/' target='_blank'>Bulma</a>を使います</p>
+            </div>
+            <img src='https://bulma.io/images/bulma-logo.png' />
+
+            <div class='sentence'>
+                <p>Bulmaが提供する主な機能は以下のようなものがあります</p>
+                <ul>
+                    <li>主要なパーツのデフォルトスタイル</li>
+                    <li><code>warning</code>や<code>danger</code>などのコンテキストカラーの定義</li>
+                    <li>パーツを作るためのスタイル群(このページのタイトル部分のような)</li>
+                    <li>モバイル・デスクトップ両対応ページ</li>
+                </ul>
+            </div>
+
+            <div class='sentence'>
+                <p>Bulmaの機能を利用するには<code>&it;head&gt;</code>タグに以下の読み込み文を追加します</p>
+            </div>
+
+<pre><code>&lt;!-- ページのスケールを設定 --&gt;
+&lt;meta name='viewport' content='width=device-width, initial-scale=1'&gt;
+
+&lt;!-- icon --&gt;
+&lt;link rel='stylesheet' href='https://cdn.materialdesignicons.com/2.6.95/css/materialdesignicons.min.css'&gt;
+&lt;script defer src='https://use.fontawesome.com/releases/v5.1.0/js/all.js'&gt;&lt;/script&gt;
+
+&lt;!-- bulma --&gt;
+&lt;link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'&gt;</code></pre>
+
+            <div class='sentence'>
+                <p>Bulmaの機能の利用例は以下のようなものがあります</p>
+            </div>
+
+            <div class='columns' style='align-items: center;'>
+                <div class='column'>
+                    <pre><code>&lt;button class='button'&gt;ボタン&lt;/button&gt;</pre></code>
+                </div>
+
+                <div class='column'>
+                    <button class='button'>ボタン</button>
+                </div>
+            </div>
+
+            <div class='columns' style='align-items: center;'>
+                <div class='column'>
+                    <pre><code>&lt;i class='icon fa is-large fa-home'&gt;&lt;/i&gt;</pre></code>
+                </div>
+
+                <div class='column'>
+                    <i class='icon fa is-large fa-home'></i>
+                </div>
+            </div>
+
+            <hr />
+
+            <h2>スクリプトを書いてみよう</h2>
+            <div class='sentence'>
+                <p>WEBページに様々な処理を実装するために、スクリプト(プログラム)と言うものを書きます</p>
+                <p>今回はボタン要素をクリックして、ダイアログを表示させてみます</p>
+                <p>下記のようにダイアログを表示させる関数(タスクや値計算を実行する文の集まり)を書いてみましょう</p>
+            </div>
+<pre><code>function sayHello() {
+    alert('Hello World');
+}</code></pre>
+
+            <div class='sentence'>
+                <p>関数を定義するにはまず、functionと記述し関数を定義することを明記します</p>
+                <p>そして、関数に持たせようとしている機能を元に関数名を英語で決めて記述します</p>
+                <p>ダイアログを表示する関数は予め実装されてます。</p>
+                <p>基本形は<code>alert();</code>で、ダイアログは表示できます</p>
+                <p>上記の例ではダイアログに文字列を表示させるために、alert関数に文字列を引数(パラメータ)として渡します</p>
+                <p>文字列はクォーテーション<code>'</code>で囲むというルールがあります</p>
+            </div>
+
+            <div class='sentence'>
+                <p>ここまでは関数の定義をしました</p>
+                <p>定義した関数は呼び出されるまで実行されません</p>
+                <p>ボタンがクリックされたときに、先程定義した関数を実行するようにしてあげましょう</p>
+                <p>ボタンタグにonClickイベントを与えて、先程定義した関数を記述します</p>
+            </div>
+<pre><code>&lt;button class='btn' onClick='sayHello()'&gt;ボタン&lt;/button&gt;
+</code></pre>
+
+            <div class='sentence'>
+                <p>実装するとこのようになります</p>
+            </div>
+            <button class='button' onClick='sayHello()'>ボタン</button>
             <!-- ここに書きたいものを書く end -->
         </section>
+
+        <script>
+            function sayHello() {
+                alert('Hello World');
+            }
+        </script>
     </body>
 </html>
