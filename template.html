@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- htmlの内容 -->
+<html>
+    <!-- ページの前情報 -->
+    <head>
+        <!-- ページのスケールを設定 -->
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <!-- icon -->
+        <link rel='stylesheet' href='https://cdn.materialdesignicons.com/2.6.95/css/materialdesignicons.min.css'>
+        <script defer src='https://use.fontawesome.com/releases/v5.1.0/js/all.js'></script>
+
+        <!-- bulma -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'>
+
+        <!-- ページのスタイル -->
+        <style>
+            /** classにスタイルをつけるときはドット(.)をclassの前につける  */
+            .main {
+                /** mainの最大幅は1100px 900pxとかにしてみよう */
+                max-width: 1100px;
+
+                /** 中央よりになる */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /** idにスタイルをつけるときはシャープ(#)をclassの前につける  */
+            #test {
+                /** アニメーションを設定 */
+                /** 何に対して 何秒で アニメーションの種類(変えるならググって) */
+                transition: font-size 2s ease;
+            }
+        </style>
+
+        <!-- タイトル -->
+        <title>テンプレート</title>
+    </head>
+
+    <!-- 実際に表示される内容 -->
+    <body>
+        <section class='section main'>
+            <!-- ここに書きたいものを書く start -->
+
+            <div class='box'>
+                <!-- 仮の内容 消しても良い start -->
+                <h1 class='title'>テンプレート</h1>
+                <p id='test'>内容</p>
+                <!-- 仮の内容 消しても良い end -->
+            </div>
+
+            <!-- ここに書きたいものを書く end -->
+        </section>
+
+        <!-- ページのスクリプト(プログラム) -->
+        <script>
+            window.addEventListener('load', () => {
+                // ページが読み込まれた時にこの中のコードを実行する
+
+                // 1000ミリ秒(1秒)後にプログラムを実行する
+                window.setTimeout(() => {
+                    document.getElementById('test').style.fontSize = '1.5em';
+                }, 1000);
+            });
+        </script>
+    </body>
+</html>

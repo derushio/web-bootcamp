@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- htmlの内容 -->
+<html>
+    <!-- ページの前情報 -->
+    <head>
+        <!-- ページのスケールを設定 -->
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <!-- icon -->
+        <link rel='stylesheet' href='https://cdn.materialdesignicons.com/2.6.95/css/materialdesignicons.min.css'>
+        <script defer src='https://use.fontawesome.com/releases/v5.1.0/js/all.js'></script>
+
+        <!-- bulma -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'>
+
+        <!-- ページのスタイル -->
+        <style>
+            /** classにスタイルをつけるときはドット(.)をclassの前につける  */
+            .main {
+                /** mainの最大幅は1100px 900pxとかにしてみよう */
+                max-width: 1100px;
+
+                /** 中央よりになる */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h2 {
+                font-size: 2.0em;
+                border-bottom: 1px solid black;
+                margin-bottom: 0.25rem;
+            }
+
+            .sentence {
+                margin-bottom: 1rem;
+            }
+
+            ol li {
+                margin-left: 1rem;
+            }
+        </style>
+
+        <!-- タイトル -->
+        <title>HTMLについて | ITBootcamp</title>
+    </head>
+
+    <!-- 実際に表示される内容 -->
+    <body>
+        <div class='hero is-dark'>
+            <div class='hero-body container'>
+                <h1 class='title'>HTMLについて</h1>
+                <h1 class='subtitle'>まずは基本から</h1>
+            </div>
+        </div>
+
+        <section class='section main'>
+            <!-- ここに書きたいものを書く start -->
+
+            <h2>HTMLとは</h2>
+            <div class='sentence'>
+                <p>HTMLとは、WEBページを構成するための言語です。</p>
+                <p>以下のようなタグに囲まれたテキストで表現をします。<p>
+            </div>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;タイトル&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;表示される内容&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <hr/>
+
+            <h2>実際に書いてみよう</h2>
+            <div class='sentence'>
+                <ol>
+                    <li><a>ここ</a>から<code>template.html</code>をダウンロードしましょう</li>
+                </ol>
+            </div>
+
+
+            <!-- ここに書きたいものを書く end -->
+        </section>
+    </body>
+</html>
